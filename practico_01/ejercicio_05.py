@@ -9,8 +9,12 @@ def multiplicar_basico(numeros: Iterable[float]) -> float:
 
     Restricciones: No usar bibliotecas auxiliares (Numpy, math, pandas).
     """
+    producto = 1.0  # Initialize producto with 1 (multiplicative identity)
     for num in numeros:
         producto *= num
+    # If the iterable was empty, return 0 as specified
+    if not hasattr(numeros, '__len__') or len(list(numeros)) == 0:
+        return 0.0
     return producto
 
 
